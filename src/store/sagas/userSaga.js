@@ -1,3 +1,10 @@
+import {
+    mockedUserData,
+    mockedUserActivity,
+    mockedUserAverageSessions,
+    mockedUserPerformance
+} from '../../assets/mockedDatas/mockedUser';
+
 import { takeLatest, call, put } from 'redux-saga/effects';
 import {
     GET_USER_DATA_STARTED,
@@ -6,6 +13,8 @@ import {
     SET_IS_REQUESTING_TRUE,
     SET_IS_REQUESTING_FALSE
 } from '../types';
+
+import { formatPerformances } from '../../utils/utils';
 
 const fetchUser = (id) => fetch(`http://localhost:3000/user/${id}`);
 const fetchUserActivity = (id) => fetch(`http://localhost:3000/user/${id}/activity`);
@@ -29,14 +38,15 @@ function* getUserData(action){
         const userAverageSessions = yield (userAverageSessionsRes.json());
 
         const userPerfomanceRes = yield call(fetchUserPerformance, id);
-        const userPerformance = yield (userPerfomanceRes.json());
+        const rawPerformance = yield (userPerfomanceRes.json());
+        const userPerformance = formatPerformances(rawPerformance.data)
 
         yield put({
             type: GET_USER_DATA_SUCCESS,
             payload: {
-                userData,
-                userActivity,
-                userAverageSessions,
+                userData: userData.data,
+                userActivity : userActivity.data,
+                userAverageSessions: userAverageSessions.data,
                 userPerformance
             }
         });
@@ -47,13 +57,18 @@ function* getUserData(action){
     }
     catch(error) {
         yield put({ 
-            type: GET_USER_DATA_FAILURE, payload: error 
+            type: GET_USER_DATA_FAILURE, 
+            payload: {
+                mockedUserData,
+                mockedUserActivity,
+                mockedUserAverageSessions,
+                mockedUserPerformance
+            }
         });
 
         yield put({
             type: SET_IS_REQUESTING_FALSE
         });
-        console.log(error)
     }
 }
 
