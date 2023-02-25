@@ -3,6 +3,9 @@
 
 @import"./utils/variables";
 
+@import"./layouts/body";
 @import"./layouts/header";
+@import"./layouts/sidebar";
 
 @import"./components/loader";
+@import"./components/sidebarButton";

@@ -1,0 +1,10 @@
+.sidebar {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 120px;
+    height: calc(100vh - 90px);
+}

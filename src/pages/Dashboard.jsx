@@ -1,4 +1,5 @@
 import Header from "../components/Header";
+import Sidebar from "../components/SideBar";
 import Loader from "../components/Loader";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -29,6 +30,7 @@ function DashBoard(){
                 <Loader/>
             }
             <Header/>
+            <Sidebar/>
         </div>
     )
 }
