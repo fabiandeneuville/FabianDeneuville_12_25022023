@@ -4,10 +4,10 @@ import {
 } from '../types';
 
 const initialState = {
-    userData: {},
-    userActivity: {},
-    userAverageSessions: {},
-    userPerformance: {}
+    userData: null,
+    userActivity: null,
+    userAverageSessions: null,
+    userPerformance: null
 }
 
 function user(state = initialState, action){
