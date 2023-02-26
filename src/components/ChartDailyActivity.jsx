@@ -1,4 +1,4 @@
-function DashboardDailyActivity(){
+function ChartDailyActivity(){
     return (
         <div className="dashboard__layout__daily">
             
@@ -6,4 +6,4 @@ function DashboardDailyActivity(){
     )
 }
 
-export default DashboardDailyActivity;
+export default ChartDailyActivity;

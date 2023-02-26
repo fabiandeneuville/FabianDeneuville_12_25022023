@@ -1,14 +1,15 @@
 import DashboardHeading from "./DashboardHeading";
-import DashboardKeyDatas from "./DashboardKeyDatas";
-import DashboardScore from "./DashBoardScore";
-import DashboardDailyActivity from "./DashboardDailyActivity";
-import DashboardAverage from "./DashboardAverage";
-import DashboardPerformance from "./DashboardPerformance";
+import KeyData from "./KeyData";
+import ChartScore from "./ChartScore";
+import ChartDailyActivity from "./ChartDailyActivity";
+import ChartAverage from "./ChartAverage";
+import ChartPerformance from "./ChartPerformance";
 import { useSelector } from "react-redux";
 
 function DashboardLayout(){
 
     const userData = useSelector(state => state.user.userData);
+    const userPerformance = useSelector(state => state.user.userPerformance)
 
     return (
             <>
@@ -17,11 +18,18 @@ function DashboardLayout(){
                         <DashboardHeading
                         firstName={userData.userInfos.firstName}
                         />
-                        <DashboardKeyDatas/>
-                        <DashboardScore/>
-                        <DashboardDailyActivity/>
-                        <DashboardAverage/>
-                        <DashboardPerformance/>
+                        <KeyData
+                        data={userData.keyData}
+                        
+                        />
+                        <ChartScore
+                        score={userData.todayScore ? userData.todayScore : userData.score}
+                        />
+                        <ChartDailyActivity/>
+                        <ChartAverage/>
+                        <ChartPerformance
+                        performance={userPerformance}
+                        />
                     </div>
                 }
             </>

@@ -1,4 +1,4 @@
-function DashboardAverage(){
+function ChartAverage(){
     return (
         <div className="dashboard__layout__average">
 
@@ -6,4 +6,4 @@ function DashboardAverage(){
     )
 }
 
-export default DashboardAverage;
+export default ChartAverage;

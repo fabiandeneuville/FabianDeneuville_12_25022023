@@ -5,11 +5,11 @@ export const mockedUserData = {
         lastName: "Deneuville",
         age: 36
     },
-    score: 0.3,
+    todayScore: 0.3,
     keyData: {
         calorieCount: 2500,
         proteinCount: 90,
-        carbonhydrateCount: 150,
+        carbohydrateCount: 150,
         lipidCount: 120
     }
 };
@@ -91,7 +91,7 @@ export const mockedUserAverageSessions = {
 
 export const mockedUserPerformance = [
     {
-        value: 80,
+        value: 100,
         kind: "cardio",
     },
     {
@@ -103,11 +103,11 @@ export const mockedUserPerformance = [
         kind: "endurance",
     },
     {
-        value: 50,
+        value: 80,
         kind: "strength",
     },
     {
-        value: 200,
+        value: 40,
         kind: "speed",
     },
     {
