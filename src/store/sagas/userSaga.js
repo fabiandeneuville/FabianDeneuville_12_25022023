@@ -11,7 +11,9 @@ import {
     GET_USER_DATA_SUCCESS,
     GET_USER_DATA_FAILURE,
     SET_IS_REQUESTING_TRUE,
-    SET_IS_REQUESTING_FALSE
+    SET_IS_REQUESTING_FALSE,
+    SET_SHOW_NOTIFICATION_TRUE,
+    SET_SHOW_NOTIFICATION_FALSE
 } from '../types';
 
 import { formatPerformances } from '../../utils/utils';
@@ -52,6 +54,10 @@ function* getUserData(action){
         });
 
         yield put({
+            type: SET_SHOW_NOTIFICATION_FALSE
+        })
+
+        yield put({
             type: SET_IS_REQUESTING_FALSE
         });
     }
@@ -65,6 +71,10 @@ function* getUserData(action){
                 mockedUserPerformance
             }
         });
+
+        yield put({
+            type: SET_SHOW_NOTIFICATION_TRUE
+        })
 
         yield put({
             type: SET_IS_REQUESTING_FALSE
