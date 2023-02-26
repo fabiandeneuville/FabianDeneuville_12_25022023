@@ -92,27 +92,27 @@ export const mockedUserAverageSessions = {
 export const mockedUserPerformance = [
     {
         value: 100,
-        kind: "cardio",
+        kind: "Cardio",
     },
     {
         value: 120,
-        kind: "energy",
+        kind: "Energie",
     },
     {
         value: 140,
-        kind: "endurance",
+        kind: "Endurance",
     },
     {
         value: 80,
-        kind: "strength",
+        kind: "Force",
     },
     {
         value: 40,
-        kind: "speed",
+        kind: "Vitesse",
     },
     {
         value: 90,
-        kind: "intensity",
+        kind: "intensité",
     },
 ];
 
