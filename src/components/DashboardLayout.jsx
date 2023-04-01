@@ -15,21 +15,32 @@ function DashboardLayout(){
             <>
                 {userData &&
                     <div className="dashboard__layout">
-                        <DashboardHeading
-                        firstName={userData.userInfos.firstName}
-                        />
-                        <KeyData
-                        data={userData.keyData}
-                        
-                        />
-                        <ChartScore
-                        score={userData.todayScore ? userData.todayScore : userData.score}
-                        />
-                        <ChartDailyActivity/>
-                        <ChartAverage/>
-                        <ChartPerformance
-                        performance={userPerformance}
-                        />
+                        <div className="dashboard__layout__heading">
+                            <DashboardHeading
+                            firstName={userData.userInfos.firstName}
+                            />
+                        </div>
+                        <div className="dashboard__layout__keyDatas">
+                            <KeyData
+                            data={userData.keyData}
+                            />
+                        </div>
+                        <div className="dashboard__layout__score">
+                            <ChartScore
+                            score={userData.todayScore ? userData.todayScore : userData.score}
+                            />
+                        </div>
+                        <div className="dashboard__layout__daily">
+                            <ChartDailyActivity/>
+                        </div>
+                        <div className="dashboard__layout__average">
+                            <ChartAverage/>
+                        </div>
+                        <div className="dashboard__layout__performance">
+                            <ChartPerformance
+                            performance={userPerformance}
+                            />
+                        </div>
                     </div>
                 }
             </>

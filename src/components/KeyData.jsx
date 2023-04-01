@@ -8,7 +8,7 @@ function KeyData(props){
 
     console.log(props.data)
     return (
-        <div className="dashboard__layout__keyDatas">
+        <div>
 
             <KeyDataCard
             image={calorieImg}
