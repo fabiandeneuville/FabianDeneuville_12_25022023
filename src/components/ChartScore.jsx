@@ -8,7 +8,7 @@ function ChartScore(props){
             <RadialBarChart
             innerRadius="70%" 
             outerRadius="100%"
-            data={[{score: 1, fill: 'transparent'}, {score: props.score, fill: "crimson"}]}
+            data={[{score: 1, fill: 'transparent'}, {score: props.score, fill: "rgb(234,51,36)"}]}
             startAngle={90} 
             endAngle={450}
             >
@@ -16,7 +16,7 @@ function ChartScore(props){
                 minAngle={15}
                 clockWise="false"
                 dataKey="score"
-                fill="#crimson"
+                fill="rgb(234,51,36)"
                 cornerRadius={20}
                 />
                 <Customized component={<LegendScore score={props.score}/>}/>

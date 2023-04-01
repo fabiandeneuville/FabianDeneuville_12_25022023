@@ -16,7 +16,6 @@ function DashBoard(){
     const isRequesting = useSelector(state => state.status.isRequesting);
     const showNotification = useSelector(state => state.status.showNotification);
 
-    console.log(userData)
 
     const dispatch = useDispatch()
 

@@ -6,9 +6,8 @@ import lipidImg from '../assets/images/lipid.png';
 
 function KeyData(props){
 
-    console.log(props.data)
     return (
-        <div>
+        <div className="dashboard__layout__keyDatas">
 
             <KeyDataCard
             image={calorieImg}

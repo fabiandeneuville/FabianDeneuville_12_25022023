@@ -55,39 +55,37 @@ export const mockedUserActivity = {
     ]
 };
 
-export const mockedUserAverageSessions = {
-    userId: 10,
-    sessions: [
-        {
-            day: 1,
-            sessionLength: 45,
-        },
-        {
-            day: 2,
-            sessionLength: 45,
-        },
-        {
-            day: 3,
-            sessionLength: 65,
-        },
-        {
-            day: 4,
-            sessionLength: 60,
-        },
-        {
-            day: 5,
-            sessionLength: 0,
-        },
-        {
-            day: 6,
-            sessionLength: 30,
-        },
-        {
-            day: 7,
-            sessionLength: 45,
-        },
-    ]
-};
+export const mockedUserAverageSessions = 
+[
+    {
+        day: 'L',
+        sessionLength: 45,
+    },
+    {
+        day: 'M',
+        sessionLength: 45,
+    },
+    {
+        day: 'M',
+        sessionLength: 65,
+    },
+    {
+        day: 'J',
+        sessionLength: 60,
+    },
+    {
+        day: 'V',
+        sessionLength: 0,
+    },
+    {
+        day: 'S',
+        sessionLength: 30,
+    },
+    {
+        day: 'D',
+        sessionLength: 45,
+    },
+]
 
 export const mockedUserPerformance = [
     {
