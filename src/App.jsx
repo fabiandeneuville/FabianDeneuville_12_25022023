@@ -1,12 +1,6 @@
-import DashBoard from "./pages/Dashboard"
+import router from './router';
+import { RouterProvider } from 'react-router-dom';
 
-function App() {
+const App = () => <RouterProvider router={router}/>
 
-  return (
-    <div className="App">
-      <DashBoard/>
-    </div>
-  )
-}
-
-export default App
+export default App;

@@ -5,10 +5,13 @@ import Notification from "../components/Notification";
 import Loader from "../components/Loader";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useParams } from 'react-router-dom';
 import { getUserData } from "../store/actions";
 
 function DashBoard(){
 
+    const { id } = useParams();
+    console.log(id)
     const userData = useSelector(state => state.user.userData);
     const userActivity = useSelector(state => state.user.userActivity);
     const userAverageSessions = useSelector(state => state.user.userAverageSessions);
@@ -20,7 +23,7 @@ function DashBoard(){
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(getUserData(12));
+        dispatch(getUserData(id));
         shouldNotificationDisplay();
     }, [dispatch, showNotification]);
 
