@@ -1,7 +1,17 @@
-import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, Customized, ReferenceArea} from "recharts";
-import CustomTooltip from "./CustomTooltip";
+import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, Customized} from "recharts";
 
-function Title(){
+function CustomTooltip({ active, payload }){
+    if (active && payload && payload.length) {
+        return (
+            <div className="customTooltip">
+                <p>{`${payload[0].value} min`}</p>
+            </div>
+        );
+    };
+    return null;
+};
+
+function CustomTitle(){
     return (
         <g textAnchor="left">
         <text fontSize='1em' fill='white' x='10%' y='10%' opacity={'0.8'}>
@@ -12,7 +22,7 @@ function Title(){
         </text>
     </g>
     );
-}
+};
 
 function ChartAverage(props){
 
@@ -42,7 +52,7 @@ function ChartAverage(props){
                 hide={true}
                 />
                 <Tooltip content={<CustomTooltip/>}/>
-                <Customized component={<Title/>}/>
+                <Customized component={<CustomTitle/>}/>
                 <Line
                 type="monotone"
                 dataKey="sessionLength"
@@ -54,6 +64,6 @@ function ChartAverage(props){
             </LineChart>
         </ResponsiveContainer>
     )
-}
+};
 
 export default ChartAverage;

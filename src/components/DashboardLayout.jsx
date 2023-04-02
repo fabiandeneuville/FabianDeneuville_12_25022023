@@ -1,9 +1,9 @@
 import DashboardHeading from "./DashboardHeading";
 import KeyData from "./KeyData";
-import ChartScore from "./ChartScore";
-import ChartDailyActivity from "./ChartDailyActivity";
-import ChartAverage from "./ChartAverage";
-import ChartPerformance from "./ChartPerformance";
+import ChartScore from "./charts/Score";
+import ChartDailyActivity from "./charts/DailyActivity";
+import ChartAverage from "./charts/Average";
+import ChartPerformance from "./charts/Performance";
 import { useSelector } from "react-redux";
 
 function DashboardLayout(){
@@ -50,6 +50,6 @@ function DashboardLayout(){
                 }
             </>
     )
-}
+};
 
 export default DashboardLayout;

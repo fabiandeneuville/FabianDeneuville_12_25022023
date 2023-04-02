@@ -11,11 +11,6 @@ import { getUserData } from "../store/actions";
 function DashBoard(){
 
     const { id } = useParams();
-    console.log(id)
-    const userData = useSelector(state => state.user.userData);
-    const userActivity = useSelector(state => state.user.userActivity);
-    const userAverageSessions = useSelector(state => state.user.userAverageSessions);
-    const userPerformance = useSelector(state => state.user.userPerformance);
     const isRequesting = useSelector(state => state.status.isRequesting);
     const showNotification = useSelector(state => state.status.showNotification);
 

@@ -5,7 +5,7 @@ function Home(){
     const navigate = useNavigate();
 
     const toUserDashBoard = (id) => {
-        navigate(`./${id}`)
+        navigate(`./dashboard/${id}`)
     }
 
     return (
