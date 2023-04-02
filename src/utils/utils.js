@@ -18,15 +18,25 @@ const days = {
 }
 
 export const formatPerformances = (obj) => {
-    obj.data.map((item) => {
+    let clone = Object.assign({}, obj)
+    clone.data.map((item) => {
         item.kind = translatedKinds[item.kind]
     })
-    return obj.data;
+    return clone.data;
 };
 
 export const formatDays = (array) => {
-    array.map((session) => {
+    let formatedArray = [...array]
+    formatedArray.map((session) => {
         session.day = days[session.day]
     })
-    return array;
+    return formatedArray;
+};
+
+export const getDaysIndex = (array) => {
+    let data = [...array];
+    data.map((session, index) => {
+        session.day = index + 1;
+    });
+    return data;
 };

@@ -10,7 +10,9 @@ function DashboardLayout(){
 
     const userData = useSelector(state => state.user.userData);
     const userPerformance = useSelector(state => state.user.userPerformance);
-    const userAverageSessions = useSelector(state => state.user.userAverageSessions)
+    const userAverageSessions = useSelector(state => state.user.userAverageSessions);
+    const userActivity = useSelector(state => state.user.userActivity);
+    
     return (
             <>
                 {userData &&
@@ -30,7 +32,9 @@ function DashboardLayout(){
                             />
                         </div>
                         <div className="dashboard__layout__daily">
-                            <ChartDailyActivity/>
+                            <ChartDailyActivity
+                            activity={userActivity}
+                            />
                         </div>
                         <div className="dashboard__layout__average">
                             <ChartAverage
