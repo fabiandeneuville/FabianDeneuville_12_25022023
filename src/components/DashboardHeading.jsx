@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function DashboardHeading(props){
     return (
         <div>
@@ -8,3 +10,7 @@ function DashboardHeading(props){
 }
 
 export default DashboardHeading;
+
+DashboardHeading.propTypes = {
+    firstName: PropTypes.string.isRequired
+};

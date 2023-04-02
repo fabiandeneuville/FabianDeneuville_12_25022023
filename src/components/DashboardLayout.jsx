@@ -33,7 +33,7 @@ function DashboardLayout(){
                         </div>
                         <div className="dashboard__layout__daily">
                             <ChartDailyActivity
-                            activity={userActivity}
+                            sessions={userActivity.sessions}
                             />
                         </div>
                         <div className="dashboard__layout__average">

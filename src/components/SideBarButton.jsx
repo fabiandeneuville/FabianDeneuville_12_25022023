@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function SidebarButton(props){
     return (
         <div className="sidebar__button" role={"button"}>
@@ -7,3 +9,8 @@ function SidebarButton(props){
 }
 
 export default SidebarButton;
+
+SidebarButton.propTypes = {
+    icon: PropTypes.string.isRequired,
+    altText: PropTypes.string.isRequired
+};

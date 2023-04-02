@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, Customized } from 'recharts';
 import { getDaysIndex } from '../../utils/utils';
 
@@ -33,7 +35,7 @@ function CustomTitle(){
 
 function ChartDailyActivity(props){
 
-    const data = getDaysIndex(props.activity.sessions); // Formating days to display index instead of actual date
+    const data = getDaysIndex(props.sessions); // Formating days to display index instead of actual date
 
     return (
         <ResponsiveContainer width="100%" height="100%">
@@ -52,3 +54,11 @@ function ChartDailyActivity(props){
 };
 
 export default ChartDailyActivity;
+
+ChartDailyActivity.propTypes = {
+    sessions: PropTypes.arrayOf(PropTypes.shape({
+        day: PropTypes.string.isRequired,
+        kilogram: PropTypes.number.isRequired,
+        calories: PropTypes.number.isRequired
+    })).isRequired
+};

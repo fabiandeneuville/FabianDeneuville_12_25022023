@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function KeyDataCard(props){
     return (
         <div className="keyDataCard">
@@ -11,3 +13,9 @@ function KeyDataCard(props){
 }
 
 export default KeyDataCard;
+
+KeyDataCard.propTypes = {
+    image: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    unity: PropTypes.string.isRequired
+};

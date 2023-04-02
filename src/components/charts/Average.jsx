@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, Customized} from "recharts";
 
 function CustomTooltip({ active, payload }){
@@ -63,7 +65,14 @@ function ChartAverage(props){
                 />
             </LineChart>
         </ResponsiveContainer>
-    )
+    );
 };
 
 export default ChartAverage;
+
+ChartAverage.propTypes = {
+    sessions: PropTypes.arrayOf(PropTypes.shape({
+        day: PropTypes.string.isRequired,
+        sessionLength: PropTypes.number.isRequired
+    })).isRequired
+};

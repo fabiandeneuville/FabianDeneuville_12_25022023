@@ -1,4 +1,7 @@
+import PropTypes from 'prop-types';
+
 function Notification(props){
+
     return (
         <div className="notification">
             <div className="notification__heading">
@@ -12,7 +15,12 @@ function Notification(props){
                 {props.children}
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Notification;
+
+Notification.propTypes = {
+    onHide: PropTypes.func.isRequired,
+    children: PropTypes.arrayOf(PropTypes.node).isRequired
+};

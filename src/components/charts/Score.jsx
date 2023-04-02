@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { RadialBarChart, RadialBar, Customized, ResponsiveContainer } from "recharts";
 
 function ScoreLegend(props){
@@ -48,7 +50,15 @@ function ChartScore(props){
                 <Customized component={<ScoreLegend score={props.score}/>}/>
             </RadialBarChart>
         </ResponsiveContainer>
-    )
-}
+    );
+};
 
 export default ChartScore;
+
+ChartScore.propTypes = {
+    score: PropTypes.number.isRequired
+};
+
+ScoreLegend.propTypes = {
+    score: PropTypes.number.isRequired
+};
