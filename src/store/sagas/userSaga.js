@@ -16,7 +16,7 @@ import {
     SET_SHOW_NOTIFICATION_FALSE
 } from '../types';
 
-import { formatPerformances, formatDays } from '../../utils/utils';
+import { formatPerformances, formatDays, getDaysIndex } from '../../utils/utils';
 
 const fetchUser = (id) => fetch(`http://localhost:3000/user/${id}`);
 const fetchUserActivity = (id) => fetch(`http://localhost:3000/user/${id}/activity`);
@@ -34,8 +34,9 @@ function* getUserData(action){
         const userData = yield (userDataRes.json());
 
         const userActivityRes = yield call(fetchUserActivity, id);
-        const userActivity = yield (userActivityRes.json());
+        const rawUserActivity = yield (userActivityRes.json());
 
+        const userActivity = getDaysIndex(rawUserActivity.data.sessions);
         const userAverageSessionsRes = yield call(fetchUserAverageSessions, id);
         const rawUserAverageSessions = yield (userAverageSessionsRes.json());
         const userAverageSessions = formatDays(rawUserAverageSessions.data.sessions);
@@ -48,7 +49,7 @@ function* getUserData(action){
             type: GET_USER_DATA_SUCCESS,
             payload: {
                 userData: userData.data,
-                userActivity : userActivity.data,
+                userActivity : userActivity,
                 userAverageSessions: userAverageSessions,
                 userPerformance
             }

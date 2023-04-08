@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, Customized } from 'recharts';
-import { getDaysIndex } from '../../utils/utils';
+// import { getDaysIndex } from '../../utils/utils';
 
 const legendFormatter = (value) => {
     const legends = {
@@ -35,11 +35,11 @@ function CustomTitle(){
 
 function ChartDailyActivity(props){
 
-    const data = getDaysIndex(props.sessions); // Formating days to display index instead of actual date
+    // const data = getDaysIndex(props.sessions); // Formating days to display index instead of actual date
 
     return (
         <ResponsiveContainer width="100%" height="100%">
-        <BarChart data={data} barGap={8} barCategoryGap={1}>
+        <BarChart data={props.sessions} barGap={8} barCategoryGap={1}>
             <Customized component={<CustomTitle/>}/>
             <XAxis dataKey="day" tickLine={false} tick={{fontSize: 14}}/>
             <YAxis yAxisId="kilogram" dataKey="kilogram" type="number" domain={['dataMin - 2', 'dataMax + 1']} hide={true}/>
@@ -57,7 +57,7 @@ export default ChartDailyActivity;
 
 ChartDailyActivity.propTypes = {
     sessions: PropTypes.arrayOf(PropTypes.shape({
-        day: PropTypes.string.isRequired,
+        day: PropTypes.number.isRequired,
         kilogram: PropTypes.number.isRequired,
         calories: PropTypes.number.isRequired
     })).isRequired

@@ -14,46 +14,43 @@ export const mockedUserData = {
     }
 };
 
-export const mockedUserActivity = {
-    userId: 10,
-    sessions: [
-        {
-            day: "2023-02-01",
-            kilogram: 100,
-            calories: 250,
-        },
-        {
-            day: "2023-02-02",
-            kilogram: 99,
-            calories: 270,
-        },
-        {
-            day: "2023-02-03",
-            kilogram: 99,
-            calories: 260,
-        },
-        {
-            day: "2023-02-04",
-            kilogram: 97,
-            calories: 280,
-        },
-        {
-            day: "2023-02-05",
-            kilogram: 98,
-            calories: 150,
-        },
-        {
-            day: "2023-02-06",
-            kilogram: 97,
-            calories: 170,
-        },
-        {
-            day: "2023-02-07",
-            kilogram: 96,
-            calories: 290,
-        },
-    ]
-};
+export const mockedUserActivity = [
+    {
+        day: 1,
+        kilogram: 100,
+        calories: 250,
+    },
+    {
+        day: 2,
+        kilogram: 99,
+        calories: 270,
+    },
+    {
+        day: 3,
+        kilogram: 99,
+        calories: 260,
+    },
+    {
+        day: 4,
+        kilogram: 97,
+        calories: 280,
+    },
+    {
+        day: 5,
+        kilogram: 98,
+        calories: 150,
+    },
+    {
+        day: 6,
+        kilogram: 97,
+        calories: 170,
+    },
+    {
+        day: 7,
+        kilogram: 96,
+        calories: 290,
+    },
+]
 
 export const mockedUserAverageSessions = 
 [
