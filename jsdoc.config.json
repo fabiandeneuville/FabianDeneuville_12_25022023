@@ -1,0 +1,33 @@
+{
+    "tags": {
+        "allowUnknownTags": true,
+        "dictionaries": ["jsdoc", "closure"]
+    },
+    "source": {
+        "include": ["src"],
+        "includePattern": ".+\\.js(doc|x)?$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "plugins": [
+        "plugins/markdown",
+        "node_modules/better-docs/category"
+    ],
+    "opts": {
+        "destination": "docs",
+        "recurse": true,
+        "template": "node_modules/better-docs"
+    },
+    "templates": {
+        "search": true,
+        "better-docs": {
+            "name": "SPORTSEE DOCUMENTATION",
+            "title": "SportSee Documentation",
+            "navLinks": [
+                {
+                    "label": "Github",
+                    "href": "https://github.com/fabiandeneuville/FabianDeneuville_12_25022023"
+                }
+            ]
+        }
+    }
+}
