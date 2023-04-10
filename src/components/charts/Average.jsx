@@ -2,7 +2,15 @@ import PropTypes from 'prop-types';
 
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, Customized} from "recharts";
 
-function CustomTooltip({ active, payload }){
+/**
+ * @category Components
+ * @function
+ * @prop {boolean} active Is tooltip active ?
+ * @prop {array} payload Array of objects defining current chart
+ * @returns {JSX.Element}
+ */
+function ChartAverageCustomTooltip({ active, payload }){
+    console.log(payload)
     if (active && payload && payload.length) {
         return (
             <div className="customTooltip">
@@ -13,7 +21,16 @@ function CustomTooltip({ active, payload }){
     return null;
 };
 
-function CustomTitle(){
+/**
+ * Average sessions chart custom title
+ * @category Components
+ * @returns {JSX.Element}
+ * @example
+ * return (
+ *  <ChartAverageCustomTitle />
+ * )
+ */
+function ChartAverageCustomTitle(){
     return (
         <g textAnchor="left">
         <text fontSize='1em' fill='white' x='10%' y='10%' opacity={'0.8'}>
@@ -25,6 +42,26 @@ function CustomTitle(){
     </g>
     );
 };
+
+/**
+ * Average activity chart
+ * @category Components
+ * @prop {array.<{day: String, sessionLength: Number}>} sessions User sessions
+ * @returns {JSX.Element}
+ * @example
+ * const sessions = [
+ *  {day: "L", senssionLength: 25},
+ *  {day: "M", senssionLength: 40},
+ *  {day: "M", senssionLength: 40},
+ *  {day: "J", senssionLength: 25},
+ *  {day: "V", senssionLength: 0},
+ *  {day: "S", senssionLength: 50},
+ *  {day: "D", senssionLength: 45}
+ * ]
+ * return (
+ *     <ChartAverage sessions={sessions} />
+ * )
+ */
 
 function ChartAverage(props){
 
@@ -53,8 +90,8 @@ function ChartAverage(props){
                 domain={[0, "dataMax + 30"]}
                 hide={true}
                 />
-                <Tooltip content={<CustomTooltip/>}/>
-                <Customized component={<CustomTitle/>}/>
+                <Tooltip content={<ChartAverageCustomTooltip/>}/>
+                <Customized component={<ChartAverageCustomTitle/>}/>
                 <Line
                 type="monotone"
                 dataKey="sessionLength"

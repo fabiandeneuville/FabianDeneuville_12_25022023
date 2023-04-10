@@ -10,6 +10,14 @@ const initialState = {
     showNotification: false
 };
 
+/**
+ * Status reducer
+ * @category Reducers
+ * @param {object} state State
+ * @param {{type: String}} action Dispatched action with type
+ * @returns {object} Updated state
+ */
+
 function status(state = initialState, action){
     switch(action.type){
 

@@ -6,6 +6,11 @@ import ChartAverage from "./charts/Average";
 import ChartPerformance from "./charts/Performance";
 import { useSelector } from "react-redux";
 
+/**
+ * Dashboard layout
+ * @category Components
+ * @returns {JSX.Element}
+ */
 function DashboardLayout(){
 
     const userData = useSelector(state => state.user.userData);
@@ -24,7 +29,10 @@ function DashboardLayout(){
                             />
                         </div>
                         <KeyData
-                        data={userData.keyData}
+                        calorieCount={userData.keyData.calorieCount}
+                        proteinCount={userData.keyData.proteinCount}
+                        carbohydrateCount={userData.keyData.carbohydrateCount}
+                        lipidCount={userData.keyData.lipidCount}
                         />
 
                         <div className="dashboard__layout__score">

@@ -6,6 +6,29 @@ import carbohydrateImg from '../assets/images/carbohydrate.png';
 import proteinImg from '../assets/images/protein.png';
 import lipidImg from '../assets/images/lipid.png';
 
+/**
+ * Key data cards container
+ * @category Components
+ * @prop {number} calorieCount Calorie count 
+ * @prop {number} proteinCount Protein count
+ * @prop {number} carbohydrateCount Carbohydrate count
+ * @prop {number} lipidCount Lipid count
+ * @return {JSX.Element}
+ * @example
+ * const calorieCount = 1000;
+ * const proteinCount = 1000;
+ * const carbohydrateCount = 1000;
+ * const lipidCount = 1000;
+ * 
+ * return (
+ *  <KeyData 
+ *  calorieCount={calorieCount} 
+ *  proteinCount={proteinCount} 
+ *  carbohydrateCount={carbohydrateCount} 
+ *  lipidCount={lipidCount} 
+ *  />
+ * )
+ */
 function KeyData(props){
 
     return (
@@ -15,28 +38,28 @@ function KeyData(props){
             image={calorieImg}
             type={"Calories"}
             unity={"kCal"}
-            value={props.data.calorieCount}
+            value={props.calorieCount}
             />
 
             <KeyDataCard
             image={proteinImg}
             type={"Protéines"}
             unity={"g"}
-            value={props.data.proteinCount}
+            value={props.proteinCount}
             />
 
             <KeyDataCard
             image={carbohydrateImg}
             type={"Glucides"}
             unity={"g"}
-            value={props.data.carbohydrateCount}
+            value={props.carbohydrateCount}
             />
 
             <KeyDataCard
             image={lipidImg}
             type={"Lipides"}
             unity={"g"}
-            value={props.data.lipidCount}
+            value={props.lipidCount}
             />
         </div>
     )
@@ -45,10 +68,8 @@ function KeyData(props){
 export default KeyData;
 
 KeyData.propTypes = {
-    data: PropTypes.shape({
-        calorieCount: PropTypes.number.isRequired,
-        proteinCount: PropTypes.number.isRequired,
-        carbohydrateCount: PropTypes.number.isRequired,
-        lipidCount: PropTypes.number.isRequired
-    }).isRequired
+    calorieCount: PropTypes.number.isRequired,
+    proteinCount: PropTypes.number.isRequired,
+    carbohydrateCount: PropTypes.number.isRequired,
+    lipidCount: PropTypes.number.isRequired
 };

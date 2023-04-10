@@ -55,7 +55,6 @@ export const formatDays = (array) => {
  * @return {Array<{day: Number, kilogram: Number, calories: Number}>}
  */
 export const getDaysIndex = (array) => {
-    console.log(array)
     let data = [...array];
     data.map((session, index) => {
         session.day = index + 1;

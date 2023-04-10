@@ -2,6 +2,17 @@ import logo from '../assets/images/logo.svg';
 
 import { useNavigate } from 'react-router-dom';
 
+
+/**
+ * Page header component
+ * @category Components
+ * @return {JSX.Element}
+ * @example
+ * return (
+ *  <Header />
+ * )
+ */
+
 function Header(){
 
     const navigate = useNavigate();

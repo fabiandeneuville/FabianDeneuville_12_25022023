@@ -6,8 +6,14 @@ import Loader from "../components/Loader";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
-import { getUserData } from "../store/actions";
+import { getUserDataAction } from "../store/actions";
 
+/**
+ * Dashboard main page
+ * @category Components
+ * @return {JSX.Element}
+ * 
+ */
 function DashBoard(){
 
     const { id } = useParams();
@@ -18,7 +24,7 @@ function DashBoard(){
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(getUserData(id));
+        dispatch(getUserDataAction(id));
         shouldNotificationDisplay();
     }, [dispatch, showNotification]);
 

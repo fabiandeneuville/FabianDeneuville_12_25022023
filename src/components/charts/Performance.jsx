@@ -2,6 +2,24 @@ import PropTypes from 'prop-types';
 
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
+/**
+ * Performance chart
+ * @category Components
+ * @prop {array.<{kind: String, value: Number}>} performance User performance
+ * @returns {JSX.Element}
+ * @example
+ * const performance = [
+ *  {value: 80, kind: "Cardio"},
+ *  {value: 90, kind: "Energie"},
+ *  {value: 80, kind: "Endurance"},
+ *  {value: 70, kind: "Force"},
+ *  {value: 60, kind: "Vitesse"},
+ *  {value: 80, kind: "Intensité"},
+ * ]
+ * return (
+ *     <ChartPerformance performance={performance} />
+ * )
+ */
 function ChartPerformance(props){
 
     return (

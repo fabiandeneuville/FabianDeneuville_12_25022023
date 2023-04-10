@@ -10,6 +10,14 @@ const initialState = {
     userPerformance: null
 }
 
+/**
+ * User reducer
+ * @category Reducers
+ * @param {object} state State
+ * @param {{type: String, payload: Any}} action Dispatched action with type and payload
+ * @returns {object} Updated state
+ */
+
 function user(state = initialState, action){
     switch (action.type){
 

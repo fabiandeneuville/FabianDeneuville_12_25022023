@@ -7,8 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "build:doc": "jsdoc -c jsdoc.config.json",
-    "open:doc": "live-server --open='/docs/index.html'"
+    "generate-doc": "jsdoc -c jsdoc.config.json",
+    "open-doc": "live-server --open='/docs/index.html'"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",

@@ -2,7 +2,18 @@ import PropTypes from 'prop-types';
 
 import { RadialBarChart, RadialBar, Customized, ResponsiveContainer } from "recharts";
 
-function ScoreLegend(props){
+/**
+ * Score chart legend
+ * @category Components
+ * @prop {number} score User score
+ * @returns {JSX.Element}
+ * @example
+ * const score = 0.3;
+ * return (
+ *  <ChartScoreLeged score={score}/>
+ * )
+ */
+function ChartScoreLegend(props){
     return (
         <g textAnchor="middle">
             <text fontSize='2em' fill='black' x='50%' y='40%'>
@@ -18,7 +29,16 @@ function ScoreLegend(props){
     );
 };
 
-function CustomTitle(){
+/**
+ * Score chart custom title
+ * @category Components
+ * @returns {JSX.Element}
+ * @example
+ * return (
+ *  <ChartScoreCustomTitle />
+ * )
+ */
+function ChartScoreCustomTitle(){
     return (
         <g textAnchor="left">
             <text fontSize='1em' fill='black' x='15%' y='10%'>
@@ -28,6 +48,17 @@ function CustomTitle(){
     );
 };
 
+/**
+ * Score chart
+ * @category Components
+ * @prop {number} score User score
+ * @returns {JSX.Element}
+ * @example
+ * const userScore = 0.5;
+ * return (
+ *  <ChartScore score={userScore}
+ * )
+ */
 function ChartScore(props){
 
     return (
@@ -46,8 +77,8 @@ function ChartScore(props){
                 fill="rgb(234,51,36)"
                 cornerRadius={20}
                 />
-                <Customized component={<CustomTitle/>}/>
-                <Customized component={<ScoreLegend score={props.score}/>}/>
+                <Customized component={<ChartScoreCustomTitle/>}/>
+                <Customized component={<ChartScoreLegend score={props.score}/>}/>
             </RadialBarChart>
         </ResponsiveContainer>
     );
@@ -59,6 +90,6 @@ ChartScore.propTypes = {
     score: PropTypes.number.isRequired
 };
 
-ScoreLegend.propTypes = {
+ChartScoreLegend.propTypes = {
     score: PropTypes.number.isRequired
 };

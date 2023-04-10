@@ -1,7 +1,6 @@
 {
     "tags": {
-        "allowUnknownTags": true,
-        "dictionaries": ["jsdoc", "closure"]
+        "allowUnknownTags": true
     },
     "source": {
         "include": ["src"],
@@ -10,16 +9,21 @@
     },
     "plugins": [
         "plugins/markdown",
-        "node_modules/better-docs/category"
+        "node_modules/better-docs/category",
+        "node_modules/better-docs/component"
     ],
     "opts": {
+        "encoding": "utf8",
         "destination": "docs",
+        "verbose": true,
         "recurse": true,
-        "template": "node_modules/better-docs"
+        "template": "node_modules/better-docs",
+        "homepageTitle": "Sportsee"
     },
     "templates": {
         "search": true,
         "better-docs": {
+            "hideGenerator": true,
             "name": "SPORTSEE DOCUMENTATION",
             "title": "SportSee Documentation",
             "navLinks": [

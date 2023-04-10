@@ -4,6 +4,15 @@ import cycling from '../assets/images/cycling.png';
 import swimming from '../assets/images/swimming.png';
 import bodybuilding from '../assets/images/bodybuilding.png';
 
+/**
+ * Page sidebar
+ * @category Components
+ * @return {JSX.Element}
+ * @example
+ * return (
+ *  <SideBar />
+ * )
+ */
 function Sidebar(){
     return (
         <div className="sidebar">

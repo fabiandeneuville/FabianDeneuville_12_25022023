@@ -1,5 +1,18 @@
 import PropTypes from 'prop-types';
 
+/**
+ * Notification component
+ * @category Components
+ * @prop {func} onHide Closing notification function
+ * @prop {arrayOf(node)} children HTML elements do be displayed in notification
+ * @return {JSX.Element}
+ * @example
+ * return (
+ *  <Notification onHide={function}>
+ *     <p>message</p>
+ *  </Notification>
+ * )
+ */
 function Notification(props){
 
     return (

@@ -1,5 +1,18 @@
 import PropTypes from 'prop-types';
 
+/**
+ * Dashboard heading - user greeting
+ * @category Components
+ * @prop {string} firstName User firstname 
+ * @return {JSX.Element}
+ * @example
+ * const firstName = "Fabian";
+ * return (
+ *  <DashboardHeading
+ *  firstName={firstName}
+ *  />
+ * )
+ */
 function DashboardHeading(props){
     return (
         <div>
