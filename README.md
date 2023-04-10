@@ -30,7 +30,7 @@ npm run dev
 To build project's documentation, run the following command : 
 
 ```
-npm run build:doc
+npm run generate-doc
 ```
 
 ### 2.2 Opening documentation
@@ -38,7 +38,7 @@ npm run build:doc
 Then, to visualize project's documentation, run the following command : 
 
 ```
-npm run open:doc
+npm run open-doc
 ```
 
 Documentation should be displayed in the browser.
