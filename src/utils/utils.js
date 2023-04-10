@@ -17,6 +17,13 @@ const days = {
     7: "D",
 }
 
+/**
+ * Formating function that returns user performances with translated kinds
+ * @category Formating function
+ * @function
+ * @param {Object} userData user performances datas returned by API
+ * @return {Array<{value: Number, kind: String}>} User performances with translated kinds
+ */
 export const formatPerformances = (obj) => {
     let clone = Object.assign({}, obj)
     clone.data.map((item) => {
@@ -25,6 +32,13 @@ export const formatPerformances = (obj) => {
     return clone.data;
 };
 
+/**
+ * Formating function that returns sessions with day first letter instead of day index in week
+ * @category Formating function
+ * @function
+ * @param {Array<{day: Number, sessionLength: Number}>} sessions Array of user sessions
+ * @return {Array<{day: String, sessionLength: Number}>} Formated user sessions with day first letter instead of index in week
+ */
 export const formatDays = (array) => {
     let formatedArray = [...array]
     formatedArray.map((session) => {
@@ -33,7 +47,15 @@ export const formatDays = (array) => {
     return formatedArray;
 };
 
+/**
+ * Function that returns day index instead of actual date
+ * @category Formating function
+ * @function
+ * @param {Array<{day: String, kilogram: Number, calories: Number}>} dailyActivity Array of user indicators per day
+ * @return {Array<{day: Number, kilogram: Number, calories: Number}>}
+ */
 export const getDaysIndex = (array) => {
+    console.log(array)
     let data = [...array];
     data.map((session, index) => {
         session.day = index + 1;
