@@ -17,6 +17,12 @@ Run the following command to install all dependencies :
 npm install
 ```
 
+In case of errors, as the project uses external libraries, run : 
+
+```
+npm install --legacy-peer-deps
+```
+
 Run the application with the following command :
 
 ```
