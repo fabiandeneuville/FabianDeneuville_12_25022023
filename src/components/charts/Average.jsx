@@ -10,7 +10,6 @@ import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, Customized
  * @returns {JSX.Element}
  */
 function ChartAverageCustomTooltip({ active, payload }){
-    console.log(payload)
     if (active && payload && payload.length) {
         return (
             <div className="customTooltip">
